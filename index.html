@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="zh">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mingyuan Dou | Academic Homepage</title>
 <style>
 :root {
@@ -21,8 +21,10 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.75; }
+a { color:var(--primary); text-decoration:none; }
+a:hover { text-decoration:underline; }
 .page { max-width: calc(var(--sidebar-width)+var(--content-width)+72px); margin:0 auto; padding:28px 24px 48px; display:grid; grid-template-columns: var(--sidebar-width) minmax(0,1fr); gap:28px; }
-.sidebar { position: sticky; top:24px; align-self:start; }
+.sidebar { position:sticky; top:24px; align-self:start; }
 .profile-card,.nav-card,.section { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
 .profile-card { padding:24px; margin-bottom:18px; text-align:center; }
 .avatar { width:90%; max-width:256px; height:auto; border-radius:20px; object-fit:cover; display:block; margin:0 auto 18px; background:#dbeafe; border:1px solid #e5e7eb; }
@@ -46,65 +48,90 @@ body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
 .pub-title { font-weight:700; }
 .pub-meta { font-size:14px; color:var(--muted); }
 .pub-gif { width:120px; height:80px; border:1px solid #e5e7eb; border-radius:8px; margin-left:10px; object-fit:cover; }
+@media (max-width:1080px){.page{grid-template-columns:1fr;}.sidebar{position:static;}}
+@media (max-width:720px){.page{padding:16px;gap:16px;}.profile-card,.section{padding:20px;}.name{font-size:26px;}.section h3{font-size:20px;}.research-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 <div class="page">
-<aside class="sidebar">
-  <div class="profile-card" id="home">
-    <img class="avatar" src="assets/images/avatar.jpg" alt="Mingyuan Dou portrait">
-    <h1 class="name">Mingyuan Dou</h1>
-    <p class="name-cn">窦铭源</p>
-    <p class="title">Ph.D. Student / Researcher</p>
-    <p class="affiliation">西安建筑科技大学</p>
-    <p class="contact-line">Email: <a href="mailto:doumingyuann@xauat.edu.cn">doumingyuann@xauat.edu.cn</a></p>
-  </div>
-</aside>
-
-<main class="content">
-
-<section class="section" id="about">
-<h3>About Me</h3>
-<p>这里写你的学术简介和研究方向，包括科研背景、兴趣和经历。</p>
-</section>
-
-<section class="section" id="research">
-<h3>Research Interests</h3>
-<div class="research-grid">
-  <div class="research-item"><strong>Legged Robotics</strong> Design and analysis of jumping and locomotion systems for compact legged robots.</div>
-  <div class="research-item"><strong>Compliant Actuation</strong> Parallel elastic actuators, clutch-based mechanisms, and high power-density motion output.</div>
-</div>
-</section>
-
-<section class="section" id="publications">
-<h3>出版物</h3>
-<ul class="pub-list">
-  <li>
-    <div>
-      <div class="pub-title">Paper Title 1</div>
-      <div class="pub-meta">Dou Mingyuan, Coauthor A, Coauthor B. Journal/Conference, 2026</div>
+  <aside class="sidebar">
+    <div class="profile-card" id="home">
+      <img class="avatar" src="assets/images/avatar.jpg" alt="Mingyuan Dou portrait">
+      <h1 class="name">Mingyuan Dou</h1>
+      <p class="name-cn">窦铭源</p>
+      <p class="title">Ph.D. Candidate / Researcher</p>
+      <p class="affiliation">西安建筑科技大学</p>
+      <p class="contact-line">Email: <a href="mailto:doumingyuann@xauat.edu.cn">doumingyuann@xauat.edu.cn</a></p>
     </div>
-    <img src="assets/images/paper1.gif" class="pub-gif" alt="Paper1 demo">
-  </li>
-  <li>
-    <div>
-      <div class="pub-title">Paper Title 2</div>
-      <div class="pub-meta">Dou Mingyuan, Coauthor C. Conference, 2025</div>
-    </div>
-    <img src="assets/images/paper2.gif" class="pub-gif" alt="Paper2 demo">
-  </li>
-</ul>
-</section>
+    <nav class="nav-card">
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#research">Research Interests</a>
+      <a href="#publications">出版物</a>
+      <a href="#projects">项目经历</a>
+    </nav>
+  </aside>
 
-<section class="section" id="projects">
-<h3>项目经历</h3>
-<div class="research-grid">
-  <div class="research-item"><strong>项目 1</strong> 简要说明项目内容和成果</div>
-  <div class="research-item"><strong>项目 2</strong> 简要说明项目内容和成果</div>
-</div>
-</section>
+  <main class="content">
 
-</main>
+    <section class="section" id="about">
+      <h3>About Me</h3>
+      <p>I am a Ph.D. candidate at Xi’an University of Architecture and Technology. My research focuses on legged robots, bio-inspired robots, elastic actuation, and robot control. I am particularly interested in the co-design of mechanisms, actuation, and control, and I especially enjoy and excel at hands-on robot platform development, from prototype design and assembly to control implementation and experimental testing.</p>
+    </section>
+
+    <section class="section" id="research">
+      <h3>Research Interests</h3>
+      <div class="research-grid">
+        <div class="research-item"><strong>Legged Robotics</strong> Design and analysis of jumping and locomotion systems for compact legged robots.</div>
+        <div class="research-item"><strong>Bio-Inspired Robots</strong> Mechanisms and motion inspired by biological systems.</div>
+        <div class="research-item"><strong>Elastic Actuation</strong> Parallel elastic actuators and clutch-based mechanisms.</div>
+        <div class="research-item"><strong>Robot Control</strong> Co-design of actuation, mechanism, and control systems with experimental validation.</div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <h3>出版物</h3>
+      <ul class="pub-list">
+        <li>
+          <div>
+            <div class="pub-title">[1] Parallel Elastic Ankle Actuator With a Unidirectional Clutch for Explosive Motion in Legged Robots</div>
+            <div class="pub-meta">M. Dou, N. He, L. He, and J. Chen. IEEE Robotics and Automation Letters, Jan. 2026, doi:10.1109/LRA.2026.3678128</div>
+          </div>
+          <img src="assets/images/paper1.gif" class="pub-gif" alt="Paper1 demo">
+        </li>
+        <li>
+          <div>
+            <div class="pub-title">[2] Caterpillar-Inspired Multi-Gait Generation Method for Series-Parallel Hybrid Segmented Robot</div>
+            <div class="pub-meta">M. Dou, N. He, J. Yang, L. He, J. Chen, and Y. Zhang. Biomimetics, vol. 9, no. 12, 2024, doi:10.3390/biomimetics9120754</div>
+          </div>
+          <img src="assets/images/paper2.gif" class="pub-gif" alt="Paper2 demo">
+        </li>
+        <li>
+          <div>
+            <div class="pub-title">[3] Design and Implementation of a Novel Two-Wheeled Composite Self-Balancing Robot for Stationary Operations in Unknown Terrain</div>
+            <div class="pub-meta">J.-X. Chen, N. He, Z. Xu, M. Dou, and L. He. IEEE Access, vol. 13, pp. 86032–86045, 2025, doi:10.1109/ACCESS.2025.3569325</div>
+          </div>
+          <img src="assets/images/paper3.gif" class="pub-gif" alt="Paper3 demo">
+        </li>
+        <li>
+          <div>
+            <div class="pub-title">[4] Gait Planning for 4-Steward Structure Based Caterpillar-Like Robot: A Segmental Progressive Generation Approach</div>
+            <div class="pub-meta">F. Yue et al. 2025 37th Chinese Control and Decision Conference (CCDC), 2025, doi:10.1109/CCDC65474.2025.11090813</div>
+          </div>
+          <img src="assets/images/paper4.gif" class="pub-gif" alt="Paper4 demo">
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="projects">
+      <h3>项目经历</h3>
+      <div class="research-grid">
+        <div class="research-item"><strong>项目 1</strong> 简要说明项目内容和成果</div>
+        <div class="research-item"><strong>项目 2</strong> 简要说明项目内容和成果</div>
+      </div>
+    </section>
+
+  </main>
 </div>
 </body>
 </html>
