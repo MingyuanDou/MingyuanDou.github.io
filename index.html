@@ -20,14 +20,8 @@
       --content-width: 980px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
@@ -36,30 +30,18 @@
       background: var(--bg);
       line-height: 1.75;
     }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .page {
+    .page { 
       max-width: calc(var(--sidebar-width) + var(--content-width) + 72px);
-      margin: 0 auto;
-      padding: 28px 24px 48px;
-      display: grid;
-      grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
-      gap: 28px;
+      margin: 0 auto; 
+      padding: 28px 24px 48px; 
+      display: grid; 
+      grid-template-columns: var(--sidebar-width) minmax(0, 1fr); 
+      gap: 28px; 
     }
-
-    .sidebar {
-      position: sticky;
-      top: 24px;
-      align-self: start;
-    }
+    .sidebar { position: sticky; top: 24px; align-self: start; }
 
     .profile-card,
     .nav-card,
@@ -70,11 +52,7 @@
       box-shadow: var(--shadow);
     }
 
-    .profile-card {
-      padding: 24px;
-      margin-bottom: 18px;
-    }
-
+    .profile-card { padding: 24px; margin-bottom: 18px; }
     .avatar {
       width: 128px;
       height: 128px;
@@ -85,255 +63,52 @@
       background: #dbeafe;
       border: 1px solid var(--line);
     }
-
-    .name {
-      margin: 0 0 6px;
-      font-size: 30px;
-      line-height: 1.2;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .name-cn {
-      margin: 0 0 10px;
-      font-size: 17px;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .title {
-      margin: 0 0 14px;
-      color: var(--text);
-      font-weight: 600;
-    }
-
+    .name { margin: 0 0 6px; font-size: 30px; line-height: 1.2; font-weight: 800; }
+    .name-cn { margin: 0 0 10px; font-size: 17px; color: var(--muted); font-weight: 600; }
+    .title { margin: 0 0 14px; color: var(--text); font-weight: 600; }
     .affiliation,
-    .contact-line {
-      font-size: 14px;
-      color: var(--muted);
-      margin: 8px 0;
-    }
+    .contact-line { font-size: 14px; color: var(--muted); margin: 8px 0; }
+    .quick-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .chip { display: inline-flex; align-items: center; padding: 8px 12px; border-radius: 999px; background: var(--primary-soft); color: var(--primary); font-size: 14px; font-weight: 600; }
+    .nav-card { padding: 12px; }
+    .nav-card a { display: block; padding: 11px 14px; border-radius: 12px; color: var(--text); font-weight: 600; font-size: 15px; }
+    .nav-card a:hover { background: var(--primary-soft); color: var(--primary); text-decoration: none; }
+    .content { min-width: 0; }
+    .hero.section { padding: 28px 30px; margin-bottom: 20px; }
+    .hero h2 { margin: 0 0 12px; font-size: 28px; line-height: 1.25; }
+    .hero p { margin: 0; color: #374151; font-size: 16px; }
+    .section { padding: 26px 30px; margin-bottom: 20px; }
+    .section h3 { margin: 0 0 18px; font-size: 22px; line-height: 1.3; }
+    .muted { color: var(--muted); }
+    .news-list, .pub-list, .award-list, .service-list { list-style: none; padding: 0; margin: 0; }
+    .news-list li, .pub-list li, .award-list li, .service-list li { padding: 14px 0; border-top: 1px solid var(--line); }
+    .news-list li:first-child, .pub-list li:first-child, .award-list li:first-child, .service-list li:first-child { border-top: none; padding-top: 0; }
+    .date { display: inline-block; min-width: 82px; font-weight: 700; color: var(--primary); }
+    .research-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 6px; }
+    .research-item { border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; background: #fcfdff; }
+    .research-item strong { display: block; margin-bottom: 6px; font-size: 16px; }
+    .pub-title { font-weight: 700; color: var(--text); }
+    .pub-meta { color: var(--muted); font-size: 14px; margin-top: 4px; }
+    .pub-links { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 12px; font-size: 14px; font-weight: 600; }
+    .two-col { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 18px; }
+    .footer { text-align: center; color: var(--muted); font-size: 14px; padding: 8px 0 0; }
 
-    .quick-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .nav-card {
-      padding: 12px;
-    }
-
-    .nav-card a {
-      display: block;
-      padding: 11px 14px;
-      border-radius: 12px;
-      color: var(--text);
-      font-weight: 600;
-      font-size: 15px;
-    }
-
-    .nav-card a:hover {
-      background: var(--primary-soft);
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .content {
-      min-width: 0;
-    }
-
-    .hero.section {
-      padding: 28px 30px;
-      margin-bottom: 20px;
-    }
-
-    .hero h2 {
-      margin: 0 0 12px;
-      font-size: 28px;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-    }
-
-    .hero p {
-      margin: 0;
-      color: #374151;
-      font-size: 16px;
-    }
-
-    .section {
-      padding: 26px 30px;
-      margin-bottom: 20px;
-    }
-
-    .section h3 {
-      margin: 0 0 18px;
-      font-size: 22px;
-      line-height: 1.3;
-      letter-spacing: -0.02em;
-    }
-
-    .section h4 {
-      margin: 18px 0 8px;
-      font-size: 17px;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .news-list,
-    .pub-list,
-    .award-list,
-    .service-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .news-list li,
-    .pub-list li,
-    .award-list li,
-    .service-list li {
-      padding: 14px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .news-list li:first-child,
-    .pub-list li:first-child,
-    .award-list li:first-child,
-    .service-list li:first-child {
-      border-top: none;
-      padding-top: 0;
-    }
-
-    .date {
-      display: inline-block;
-      min-width: 82px;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 6px;
-    }
-
-    .research-item {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px 18px;
-      background: #fcfdff;
-    }
-
-    .research-item strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 16px;
-    }
-
-    .pub-title {
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .pub-meta {
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 4px;
-    }
-
-    .pub-links {
-      margin-top: 8px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 18px;
-    }
-
-    .footer {
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-      padding: 8px 0 0;
-    }
-
-    @media (max-width: 1080px) {
-      .page {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar {
-        position: static;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .page {
-        padding: 16px;
-        gap: 16px;
-      }
-
-      .profile-card,
-      .hero.section,
-      .section {
-        padding: 20px;
-      }
-
-      .name {
-        font-size: 26px;
-      }
-
-      .hero h2 {
-        font-size: 24px;
-      }
-
-      .section h3 {
-        font-size: 20px;
-      }
-
-      .research-grid,
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-    }
+    @media (max-width: 1080px) { .page { grid-template-columns: 1fr; } .sidebar { position: static; } }
+    @media (max-width: 720px) { .page { padding: 16px; gap: 16px; } .profile-card, .hero.section, .section { padding: 20px; } .name { font-size: 26px; } .hero h2 { font-size: 24px; } .section h3 { font-size: 20px; } .research-grid, .two-col { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <div class="page">
     <aside class="sidebar">
       <div class="profile-card" id="home">
-        <img class="avatar" src="avatar.jpg" alt="Dou Mingyuan portrait" />
+        <img class="avatar" src="assets/images/avatar.jpg" alt="Dou Mingyuan portrait" />
         <h1 class="name">Dou Mingyuan</h1>
         <p class="name-cn">窦铭源</p>
         <p class="title">Ph.D. Student / Researcher</p>
-
         <p class="affiliation">
           School / Lab Name<br />
           University Name
         </p>
-
         <p class="contact-line">
           Email: <a href="mailto:your@email.com">your@email.com</a>
         </p>
@@ -346,7 +121,6 @@
         <p class="contact-line">
           CV: <a href="./cv.pdf" target="_blank">Download PDF</a>
         </p>
-
         <div class="quick-links">
           <a class="chip" href="#about">About</a>
           <a class="chip" href="#research">Research</a>
@@ -408,7 +182,7 @@
           visiting experience, and main research interests.
         </p>
         <p class="muted">
-          建议你在这里写一版正式英文简介，长度控制在 120 到 220 词之间，后续如果需要我可以直接替你改写成学术主页常用风格。
+          建议你在这里写一版正式英文简介，长度控制在 120 到 220 词之间。
         </p>
       </section>
 
@@ -449,6 +223,9 @@
               <a href="#">DOI</a>
               <a href="#">Code</a>
               <a href="#">Project</a>
+            </div>
+            <div style="margin-top: 14px;">
+              <img src="assets/images/paper1.gif" alt="Paper demo" style="width:100%; max-width:560px; border-radius:12px; border:1px solid #e5e7eb;">
             </div>
           </li>
 
