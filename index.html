@@ -18,132 +18,359 @@
   --sidebar-width: 300px;
   --content-width: 980px;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:var(--bg); color:var(--text); line-height:1.5;
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.45;
 }
-a { color:var(--primary); text-decoration:none; }
-a:hover { text-decoration:underline; }
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .page {
-  max-width: calc(var(--sidebar-width)+var(--content-width)+60px);
-  margin:0 auto; padding:24px 20px 40px;
-  display:grid; grid-template-columns: var(--sidebar-width) minmax(0,1fr); gap:20px;
+  max-width: calc(var(--sidebar-width) + var(--content-width) + 72px);
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  gap: 20px;
 }
-.sidebar { position:sticky; top:20px; align-self:start; }
-.profile-card,.nav-card,.section {
-  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
-  box-shadow:var(--shadow);
+
+.sidebar {
+  position: sticky;
+  top: 20px;
+  align-self: start;
 }
-.profile-card { padding:20px; margin-bottom:16px; text-align:center; line-height:1.3; }
+
+.profile-card,
+.nav-card,
+.section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.profile-card {
+  padding: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+  line-height: 1.25;
+}
+
 .avatar {
-  width:90%; max-width:256px; height:auto; border-radius:20px; object-fit:cover; display:block; margin:0 auto 12px;
-  background:#dbeafe; border:1px solid #e5e7eb;
+  width: 90%;
+  max-width: 256px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 12px;
+  background: #dbeafe;
+  border: 1px solid #e5e7eb;
 }
-.name { font-size:28px; font-weight:800; margin:0 0 4px; }
-.name-cn { font-size:15px; font-weight:600; color:var(--muted); margin:0 0 6px; }
-.title { font-weight:600; margin:0 0 10px; }
-.affiliation, .contact-line { font-size:13px; color:var(--muted); margin:4px 0; }
-.nav-card { padding:10px; }
-.nav-card a { display:block; padding:8px 12px; border-radius:10px; color:var(--text); font-weight:600; font-size:14px; }
-.nav-card a:hover { background: var(--primary-soft); color: var(--primary); text-decoration:none; }
-.content { min-width:0; }
-.section { padding:20px 24px; margin-bottom:16px; line-height:1.4; }
-.section h3 { font-size:20px; margin:0 0 12px; }
-.research-grid { display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:12px; margin-top:4px; }
-.research-item { border:1px solid var(--line); border-radius:14px; padding:12px 14px; background:#fcfdff; font-size:14px; }
-.research-item strong { display:block; margin-bottom:4px; font-size:15px; }
-.pub-list { list-style:none; padding:0; margin:0; font-size:13px; }
-.pub-list li { padding:8px 0; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; }
-.pub-list li:first-child { border-top:none; padding-top:0; }
-.pub-title { font-weight:700; }
-.pub-meta { font-size:12px; color:var(--muted); margin-top:2px; max-width:calc(100% - 130px); }
-.pub-gif { width:120px; height:80px; border:1px solid #e5e7eb; border-radius:6px; margin-left:8px; object-fit:cover; flex-shrink:0; }
-@media (max-width:1080px){.page{grid-template-columns:1fr;}.sidebar{position:static;}}
-@media (max-width:720px){.page{padding:12px;gap:12px;}.profile-card,.section{padding:16px;}.name{font-size:24px;}.section h3{font-size:18px;}.research-grid{grid-template-columns:1fr;}}
+
+.name {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.name-cn {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+
+.title {
+  font-weight: 600;
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.affiliation,
+.contact-line {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 4px 0;
+}
+
+.nav-card {
+  padding: 10px;
+}
+
+.nav-card a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.nav-card a:hover {
+  background: var(--primary-soft);
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.content {
+  min-width: 0;
+}
+
+.section {
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  line-height: 1.35;
+}
+
+.section h3 {
+  font-size: 20px;
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+.section p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.research-item {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: #fcfdff;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.research-item strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.pub-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pub-list li {
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.pub-list li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.pub-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.pub-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.25;
+  margin-bottom: 3px;
+}
+
+.pub-meta {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.25;
+}
+
+.pub-gif {
+  width: 140px;
+  height: 88px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #fafafa;
+}
+
+@media (max-width: 1080px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .profile-card,
+  .section {
+    padding: 16px;
+  }
+
+  .name {
+    font-size: 22px;
+  }
+
+  .section h3 {
+    font-size: 18px;
+  }
+
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pub-list li {
+    flex-direction: column;
+  }
+
+  .pub-gif {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+  }
+}
 </style>
 </head>
 <body>
 <div class="page">
-<aside class="sidebar">
-  <div class="profile-card" id="home">
-    <img class="avatar" src="assets/images/avatar.jpg" alt="Mingyuan Dou portrait">
-    <h1 class="name">Mingyuan Dou</h1>
-    <p class="name-cn">窦铭源</p>
-    <p class="title">Ph.D. Candidate / Researcher</p>
-    <p class="affiliation">Xi’an University of Architecture and Technology</p>
-    <p class="contact-line">Email: <a href="mailto:doumingyuann@xauat.edu.cn">doumingyuann@xauat.edu.cn</a></p>
-  </div>
-  <nav class="nav-card">
-    <a href="#home">Home</a>
-    <a href="#about">About Me</a>
-    <a href="#research">Research Interests</a>
-    <a href="#publications">Publications</a>
-    <a href="#projects">Projects</a>
-  </nav>
-</aside>
-
-<main class="content">
-
-<section class="section" id="about">
-<h3>About Me</h3>
-<p>I am a Ph.D. candidate at Xi’an University of Architecture and Technology. My research focuses on legged robots, bio-inspired robots, elastic actuation, and robot control. I am particularly interested in the co-design of mechanisms, actuation, and control, and I especially enjoy and excel at hands-on robot platform development, from prototype design and assembly to control implementation and experimental testing.</p>
-</section>
-
-<section class="section" id="research">
-<h3>Research Interests</h3>
-<div class="research-grid">
-  <div class="research-item"><strong>Legged Robotics</strong> Design and analysis of jumping and locomotion systems for compact legged robots.</div>
-  <div class="research-item"><strong>Bio-Inspired Robots</strong> Mechanisms and motion inspired by biological systems.</div>
-  <div class="research-item"><strong>Elastic Actuation</strong> Parallel elastic actuators and clutch-based mechanisms.</div>
-  <div class="research-item"><strong>Robot Control</strong> Co-design of actuation, mechanism, and control systems with experimental validation.</div>
-</div>
-</section>
-
-<section class="section" id="publications">
-<h3>Publications</h3>
-<ul class="pub-list">
-  <li>
-    <div>
-      <div class="pub-title">[1] Parallel Elastic Ankle Actuator With a Unidirectional Clutch for Explosive Motion in Legged Robots</div>
-      <div class="pub-meta">M. Dou, N. He, L. He, and J. Chen. IEEE Robotics and Automation Letters, Jan. 2026, doi:10.1109/LRA.2026.3678128</div>
+  <aside class="sidebar">
+    <div class="profile-card" id="home">
+      <img class="avatar" src="assets/images/avatar.jpg" alt="Mingyuan Dou portrait">
+      <h1 class="name">Mingyuan Dou</h1>
+      <p class="name-cn">窦铭源</p>
+      <p class="title">Ph.D. Candidate / Researcher</p>
+      <p class="affiliation">Xi’an University of Architecture and Technology</p>
+      <p class="contact-line">Email: <a href="mailto:doumingyuann@xauat.edu.cn">doumingyuann@xauat.edu.cn</a></p>
+      <p class="contact-line">Bilibili: <a href="https://space.bilibili.com/297997847?spm_id_from=333.1007.0.0" target="_blank">space.bilibili.com/297997847</a></p>
     </div>
-    <img src="assets/images/paper1.gif" class="pub-gif" alt="Paper1 demo">
-  </li>
-  <li>
-    <div>
-      <div class="pub-title">[2] Caterpillar-Inspired Multi-Gait Generation Method for Series-Parallel Hybrid Segmented Robot</div>
-      <div class="pub-meta">M. Dou, N. He, J. Yang, L. He, J. Chen, and Y. Zhang. Biomimetics, vol. 9, no. 12, 2024, doi:10.3390/biomimetics9120754</div>
-    </div>
-    <img src="assets/images/paper2.gif" class="pub-gif" alt="Paper2 demo">
-  </li>
-  <li>
-    <div>
-      <div class="pub-title">[3] Design and Implementation of a Novel Two-Wheeled Composite Self-Balancing Robot for Stationary Operations in Unknown Terrain</div>
-      <div class="pub-meta">J.-X. Chen, N. He, Z. Xu, M. Dou, and L. He. IEEE Access, vol. 13, pp. 86032–86045, 2025, doi:10.1109/ACCESS.2025.3569325</div>
-    </div>
-    <img src="assets/images/paper3.gif" class="pub-gif" alt="Paper3 demo">
-  </li>
-  <li>
-    <div>
-      <div class="pub-title">[4] Gait Planning for 4-Steward Structure Based Caterpillar-Like Robot: A Segmental Progressive Generation Approach</div>
-      <div class="pub-meta"><span style="font-size:13px;">F. Yue et al., Mingyuan Dou (窦铭源) *</span> 2025 37th Chinese Control and Decision Conference (CCDC), doi:10.1109/CCDC65474.2025.11090813 <span style="color:red;font-weight:bold;">*Corresponding Author</span></div>
-    </div>
-    <img src="assets/images/paper4.gif" class="pub-gif" alt="Paper4 demo">
-  </li>
-</ul>
-</section>
 
-<section class="section" id="projects">
-<h3>Projects</h3>
-<div class="research-grid">
-  <div class="research-item"><strong>Project 1</strong> Brief description of project scope and outcomes.</div>
-  <div class="research-item"><strong>Project 2</strong> Brief description of project scope and outcomes.</div>
-</div>
-</section>
+    <nav class="nav-card">
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#research">Research Interests</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </aside>
 
-</main>
+  <main class="content">
+    <section class="section" id="about">
+      <h3>About Me</h3>
+      <p>
+        I am a Ph.D. candidate at Xi’an University of Architecture and Technology. My research focuses on legged robots, bio-inspired robots, elastic actuation, and robot control. I am particularly interested in the co-design of mechanisms, actuation, and control, and I especially enjoy and excel at hands-on robot platform development, from prototype design and assembly to control implementation and experimental testing.
+      </p>
+    </section>
+
+    <section class="section" id="research">
+      <h3>Research Interests</h3>
+      <div class="research-grid">
+        <div class="research-item">
+          <strong>Legged Robotics</strong>
+          Design and analysis of jumping and locomotion systems for compact legged robots.
+        </div>
+        <div class="research-item">
+          <strong>Bio-Inspired Robots</strong>
+          Mechanisms and motion inspired by biological systems.
+        </div>
+        <div class="research-item">
+          <strong>Elastic Actuation</strong>
+          Parallel elastic actuators and clutch-based mechanisms.
+        </div>
+        <div class="research-item">
+          <strong>Robot Control</strong>
+          Co-design of actuation, mechanism, and control systems with experimental validation.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <h3>Publications</h3>
+      <ul class="pub-list">
+        <li>
+          <div class="pub-text">
+            <div class="pub-title">[1] Parallel Elastic Ankle Actuator With a Unidirectional Clutch for Explosive Motion in Legged Robots</div>
+            <div class="pub-meta">M. Dou, N. He, L. He, and J. Chen. IEEE Robotics and Automation Letters, Jan. 2026, doi: 10.1109/LRA.2026.3678128</div>
+          </div>
+          <img src="assets/images/paper1.gif" class="pub-gif" alt="Paper 1 demo">
+        </li>
+
+        <li>
+          <div class="pub-text">
+            <div class="pub-title">[2] Caterpillar-Inspired Multi-Gait Generation Method for Series-Parallel Hybrid Segmented Robot</div>
+            <div class="pub-meta">M. Dou, N. He, J. Yang, L. He, J. Chen, and Y. Zhang. Biomimetics, vol. 9, no. 12, 2024, doi: 10.3390/biomimetics9120754</div>
+          </div>
+          <img src="assets/images/paper2.gif" class="pub-gif" alt="Paper 2 demo">
+        </li>
+
+        <li>
+          <div class="pub-text">
+            <div class="pub-title">[3] Design and Implementation of a Novel Two-Wheeled Composite Self-Balancing Robot for Stationary Operations in Unknown Terrain</div>
+            <div class="pub-meta">J.-X. Chen, N. He, Z. Xu, M. Dou, and L. He. IEEE Access, vol. 13, pp. 86032–86045, 2025, doi: 10.1109/ACCESS.2025.3569325</div>
+          </div>
+          <img src="assets/images/paper3.gif" class="pub-gif" alt="Paper 3 demo">
+        </li>
+
+        <li>
+          <div class="pub-text">
+            <div class="pub-title">[4] Gait Planning for 4-Steward Structure Based Caterpillar-Like Robot: A Segmental Progressive Generation Approach</div>
+            <div class="pub-meta">F. Yue et al., M. Dou*. 2025 37th Chinese Control and Decision Conference (CCDC), doi: 10.1109/CCDC65474.2025.11090813</div>
+          </div>
+          <img src="assets/images/paper4.gif" class="pub-gif" alt="Paper 4 demo">
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="projects">
+      <h3>Projects</h3>
+      <div class="research-grid">
+        <div class="research-item">
+          <strong>Project 1</strong>
+          Brief description of project scope and outcomes.
+        </div>
+        <div class="research-item">
+          <strong>Project 2</strong>
+          Brief description of project scope and outcomes.
+        </div>
+      </div>
+    </section>
+  </main>
 </div>
 </body>
 </html>
