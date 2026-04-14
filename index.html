@@ -1,241 +1,110 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dou Mingyuan | Academic Homepage</title>
-  <meta name="description" content="Personal academic homepage of Dou Mingyuan." />
-  <style>
-    :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --primary: #1d4ed8;
-      --primary-soft: #eff6ff;
-      --shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-      --radius: 18px;
-      --sidebar-width: 300px;
-      --content-width: 980px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-        Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.75;
-    }
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .page { 
-      max-width: calc(var(--sidebar-width) + var(--content-width) + 72px);
-      margin: 0 auto; 
-      padding: 28px 24px 48px; 
-      display: grid; 
-      grid-template-columns: var(--sidebar-width) minmax(0, 1fr); 
-      gap: 28px; 
-    }
-    .sidebar { position: sticky; top: 24px; align-self: start; }
-
-    .profile-card,
-    .nav-card,
-    .section {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .profile-card { padding: 24px; margin-bottom: 18px; }
-
-    /* 头像占满左侧栏宽度90%，最大 256px */
-    .avatar {
-      width: 90%;
-      max-width: 256px;
-      height: auto;
-      border-radius: 20px;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto 18px;
-      background: #dbeafe;
-      border: 1px solid #e5e7eb;
-    }
-
-    .name { margin: 0 0 6px; font-size: 30px; line-height: 1.2; font-weight: 800; }
-    .name-cn { margin: 0 0 10px; font-size: 17px; color: var(--muted); font-weight: 600; }
-    .title { margin: 0 0 14px; color: var(--text); font-weight: 600; }
-    .affiliation,
-    .contact-line { font-size: 14px; color: var(--muted); margin: 8px 0; }
-    .quick-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-    .chip { display: inline-flex; align-items: center; padding: 8px 12px; border-radius: 999px; background: var(--primary-soft); color: var(--primary); font-size: 14px; font-weight: 600; }
-    .nav-card { padding: 12px; }
-    .nav-card a { display: block; padding: 11px 14px; border-radius: 12px; color: var(--text); font-weight: 600; font-size: 15px; }
-    .nav-card a:hover { background: var(--primary-soft); color: var(--primary); text-decoration: none; }
-    .content { min-width: 0; }
-    .hero.section { padding: 28px 30px; margin-bottom: 20px; }
-    .hero h2 { margin: 0 0 12px; font-size: 28px; line-height: 1.25; }
-    .hero p { margin: 0; color: #374151; font-size: 16px; }
-    .section { padding: 26px 30px; margin-bottom: 20px; }
-    .section h3 { margin: 0 0 18px; font-size: 22px; line-height: 1.3; }
-    .muted { color: var(--muted); }
-    .news-list, .pub-list, .award-list, .service-list { list-style: none; padding: 0; margin: 0; }
-    .news-list li, .pub-list li, .award-list li, .service-list li { padding: 14px 0; border-top: 1px solid var(--line); }
-    .news-list li:first-child, .pub-list li:first-child, .award-list li:first-child, .service-list li:first-child { border-top: none; padding-top: 0; }
-    .date { display: inline-block; min-width: 82px; font-weight: 700; color: var(--primary); }
-    .research-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 6px; }
-    .research-item { border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; background: #fcfdff; }
-    .research-item strong { display: block; margin-bottom: 6px; font-size: 16px; }
-    .pub-title { font-weight: 700; color: var(--text); }
-    .pub-meta { color: var(--muted); font-size: 14px; margin-top: 4px; }
-    .pub-links { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 12px; font-size: 14px; font-weight: 600; }
-    .two-col { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 18px; }
-    .footer { text-align: center; color: var(--muted); font-size: 14px; padding: 8px 0 0; }
-
-    @media (max-width: 1080px) { .page { grid-template-columns: 1fr; } .sidebar { position: static; } }
-    @media (max-width: 720px) { .page { padding: 16px; gap: 16px; } .profile-card, .hero.section, .section { padding: 20px; } .name { font-size: 26px; } .hero h2 { font-size: 24px; } .section h3 { font-size: 20px; } .research-grid, .two-col { grid-template-columns: 1fr; } }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mingyuan Dou | Academic Homepage</title>
+<style>
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --primary: #1d4ed8;
+  --primary-soft: #eff6ff;
+  --shadow: 0 8px 24px rgba(15,23,42,0.06);
+  --radius: 18px;
+  --sidebar-width: 300px;
+  --content-width: 980px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.75; }
+.page { max-width: calc(var(--sidebar-width)+var(--content-width)+72px); margin:0 auto; padding:28px 24px 48px; display:grid; grid-template-columns: var(--sidebar-width) minmax(0,1fr); gap:28px; }
+.sidebar { position: sticky; top:24px; align-self:start; }
+.profile-card,.nav-card,.section { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
+.profile-card { padding:24px; margin-bottom:18px; text-align:center; }
+.avatar { width:90%; max-width:256px; height:auto; border-radius:20px; object-fit:cover; display:block; margin:0 auto 18px; background:#dbeafe; border:1px solid #e5e7eb; }
+.name { font-size:30px; font-weight:800; margin:0 0 6px; }
+.name-cn { font-size:17px; font-weight:600; color:var(--muted); margin:0 0 10px; }
+.title { font-weight:600; margin:0 0 14px; }
+.affiliation { font-size:14px; color:var(--muted); margin:8px 0; }
+.contact-line { font-size:14px; color:var(--muted); margin:8px 0; }
+.nav-card { padding:12px; }
+.nav-card a { display:block; padding:11px 14px; border-radius:12px; color:var(--text); font-weight:600; font-size:15px; }
+.nav-card a:hover { background: var(--primary-soft); color: var(--primary); text-decoration:none; }
+.content { min-width:0; }
+.section { padding:26px 30px; margin-bottom:20px; }
+.section h3 { font-size:22px; margin:0 0 18px; }
+.research-grid { display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:14px; margin-top:6px; }
+.research-item { border:1px solid var(--line); border-radius:16px; padding:16px 18px; background:#fcfdff; }
+.research-item strong { display:block; margin-bottom:6px; font-size:16px; }
+.pub-list { list-style:none; padding:0; margin:0; }
+.pub-list li { padding:12px 0; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; }
+.pub-list li:first-child { border-top:none; padding-top:0; }
+.pub-title { font-weight:700; }
+.pub-meta { font-size:14px; color:var(--muted); }
+.pub-gif { width:120px; height:80px; border:1px solid #e5e7eb; border-radius:8px; margin-left:10px; object-fit:cover; }
+</style>
 </head>
 <body>
-  <div class="page">
-    <aside class="sidebar">
-      <div class="profile-card" id="home">
-        <img class="avatar" src="assets/images/avatar.jpg" alt="Dou Mingyuan portrait" />
-        <h1 class="name">Dou Mingyuan</h1>
-        <p class="name-cn">窦铭源</p>
-        <p class="title">Ph.D. Student / Researcher</p>
-        <p class="affiliation">School / Lab Name<br />University Name</p>
-        <p class="contact-line">Email: <a href="mailto:your@email.com">your@email.com</a></p>
-        <p class="contact-line">GitHub: <a href="https://github.com/MingyuanDou" target="_blank">github.com/MingyuanDou</a></p>
-        <p class="contact-line">Google Scholar: <a href="#" target="_blank">Profile Link</a></p>
-        <p class="contact-line">CV: <a href="./cv.pdf" target="_blank">Download PDF</a></p>
-        <div class="quick-links">
-          <a class="chip" href="#about">About</a>
-          <a class="chip" href="#research">Research</a>
-          <a class="chip" href="#publications">Publications</a>
-          <a class="chip" href="#awards">Awards</a>
-        </div>
-      </div>
-      <nav class="nav-card">
-        <a href="#home">Home</a>
-        <a href="#news">News</a>
-        <a href="#about">About Me</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Selected Publications</a>
-        <a href="#awards">Awards</a>
-        <a href="#service">Academic Service</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </aside>
-
-    <main class="content">
-      <section class="hero section">
-        <h2>Personal Academic Homepage</h2>
-        <p>
-          Welcome to my academic website. My research focuses on robotics,
-          compliant actuation, mechanism design, legged systems, and experimental validation.
-          This page presents my background, publications, projects, honors, and contact information.
-        </p>
-      </section>
-
-      <section class="section" id="news">
-        <h3>News</h3>
-        <ul class="news-list">
-          <li><span class="date">[2026.04]</span> Replace this line with your latest paper acceptance, award, project milestone, or invited talk.</li>
-          <li><span class="date">[2026.03]</span> Replace this line with another recent update related to your research or academic activity.</li>
-          <li><span class="date">[2025.12]</span> Replace this line with your conference presentation, journal submission, or collaboration news.</li>
-        </ul>
-      </section>
-
-      <section class="section" id="about">
-        <h3>About Me</h3>
-        <p>I am a researcher in robotics and intelligent mechanical systems. My work centers on bio-inspired actuation, parallel elastic mechanisms, jumping locomotion, and the integration of mechanism design with control and optimization.</p>
-        <p>You can replace this paragraph with your own formal biography. A typical academic bio includes: current position, degree program, institution, advisor or laboratory, prior education, visiting experience, and main research interests.</p>
-        <p class="muted">建议你在这里写一版正式英文简介，长度控制在 120 到 220 词之间。</p>
-      </section>
-
-      <section class="section" id="research">
-        <h3>Research Interests</h3>
-        <div class="research-grid">
-          <div class="research-item"><strong>Legged Robotics</strong> Design and analysis of jumping and locomotion systems for compact legged robots.</div>
-          <div class="research-item"><strong>Compliant Actuation</strong> Parallel elastic actuators, clutch-based mechanisms, and high power-density motion output.</div>
-          <div class="research-item"><strong>Mechanism Design</strong> Bio-inspired joint architecture, force transmission, and structure-level optimization.</div>
-          <div class="research-item"><strong>Modeling and Validation</strong> Dynamic modeling, simulation, bench experiments, and system-level performance evaluation.</div>
-        </div>
-      </section>
-
-      <section class="section" id="publications">
-        <h3>Selected Publications</h3>
-        <ul class="pub-list">
-          <li>
-            <div class="pub-title">Your Paper Title 1</div>
-            <div class="pub-meta"><strong>Dou Mingyuan</strong>, Coauthor A, Coauthor B. IEEE Robotics and Automation Letters, 2026.</div>
-            <div class="pub-links"><a href="#">PDF</a> <a href="#">DOI</a> <a href="#">Code</a> <a href="#">Project</a></div>
-            <div style="margin-top: 14px;">
-              <img src="assets/images/paper1.gif" alt="Paper demo" style="width:100%; max-width:560px; border-radius:12px; border:1px solid #e5e7eb;">
-            </div>
-          </li>
-          <li>
-            <div class="pub-title">Your Paper Title 2</div>
-            <div class="pub-meta">Author A, <strong>Dou Mingyuan</strong>, Author C. Conference / Journal Name, 2025.</div>
-            <div class="pub-links"><a href="#">PDF</a> <a href="#">DOI</a></div>
-          </li>
-          <li>
-            <div class="pub-title">Your Paper Title 3</div>
-            <div class="pub-meta"><strong>Dou Mingyuan</strong>, Author A. Conference / Journal Name, 2024.</div>
-            <div class="pub-links"><a href="#">PDF</a> <a href="#">Slides</a> <a href="#">Video</a></div>
-          </li>
-        </ul>
-      </section>
-
-      <section class="section" id="awards">
-        <h3>Awards & Honors</h3>
-        <ul class="award-list">
-          <li>Best Paper Award / Outstanding Paper Nomination, 2026</li>
-          <li>National Scholarship / Provincial Scholarship, 2025</li>
-          <li>Outstanding Graduate / Competition Award, 2024</li>
-        </ul>
-      </section>
-
-      <section class="section" id="service">
-        <h3>Academic Service</h3>
-        <div class="two-col">
-          <div>
-            <h4>Reviewer</h4>
-            <ul class="service-list">
-              <li>IEEE Robotics and Automation Letters</li>
-              <li>IEEE/ASME Transactions on Mechatronics</li>
-              <li>Conference Reviewer for robotics-related venues</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Professional Activities</h4>
-            <ul class="service-list">
-              <li>Conference presentation and session participation</li>
-              <li>Lab collaboration and mentoring</li>
-              <li>Open-source research dissemination</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="contact">
-        <h3>Contact</h3>
-        <p><strong>Email:</strong> <a href="mailto:your@email.com">your@email.com</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/MingyuanDou" target="_blank">github.com/MingyuanDou</a></p>
-        <p><strong>Google Scholar:</strong> <a href="#" target="_blank">Your Scholar Link</a></p>
-        <p><strong>Address:</strong> Your university, school, city, country</p>
-      </section>
-
-      <div class="footer">
-        © 2026 Dou Mingyuan. All rights reserved.
-      </div>
-    </main>
+<div class="page">
+<aside class="sidebar">
+  <div class="profile-card" id="home">
+    <img class="avatar" src="assets/images/avatar.jpg" alt="Mingyuan Dou portrait">
+    <h1 class="name">Mingyuan Dou</h1>
+    <p class="name-cn">窦铭源</p>
+    <p class="title">Ph.D. Student / Researcher</p>
+    <p class="affiliation">西安建筑科技大学</p>
+    <p class="contact-line">Email: <a href="mailto:doumingyuann@xauat.edu.cn">doumingyuann@xauat.edu.cn</a></p>
   </div>
+</aside>
+
+<main class="content">
+
+<section class="section" id="about">
+<h3>About Me</h3>
+<p>这里写你的学术简介和研究方向，包括科研背景、兴趣和经历。</p>
+</section>
+
+<section class="section" id="research">
+<h3>Research Interests</h3>
+<div class="research-grid">
+  <div class="research-item"><strong>Legged Robotics</strong> Design and analysis of jumping and locomotion systems for compact legged robots.</div>
+  <div class="research-item"><strong>Compliant Actuation</strong> Parallel elastic actuators, clutch-based mechanisms, and high power-density motion output.</div>
+</div>
+</section>
+
+<section class="section" id="publications">
+<h3>出版物</h3>
+<ul class="pub-list">
+  <li>
+    <div>
+      <div class="pub-title">Paper Title 1</div>
+      <div class="pub-meta">Dou Mingyuan, Coauthor A, Coauthor B. Journal/Conference, 2026</div>
+    </div>
+    <img src="assets/images/paper1.gif" class="pub-gif" alt="Paper1 demo">
+  </li>
+  <li>
+    <div>
+      <div class="pub-title">Paper Title 2</div>
+      <div class="pub-meta">Dou Mingyuan, Coauthor C. Conference, 2025</div>
+    </div>
+    <img src="assets/images/paper2.gif" class="pub-gif" alt="Paper2 demo">
+  </li>
+</ul>
+</section>
+
+<section class="section" id="projects">
+<h3>项目经历</h3>
+<div class="research-grid">
+  <div class="research-item"><strong>项目 1</strong> 简要说明项目内容和成果</div>
+  <div class="research-item"><strong>项目 2</strong> 简要说明项目内容和成果</div>
+</div>
+</section>
+
+</main>
+</div>
 </body>
 </html>
