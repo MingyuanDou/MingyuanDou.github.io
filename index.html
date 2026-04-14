@@ -223,6 +223,51 @@ a:hover {
   background: #fafafa;
 }
 
+.project-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.project-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: #fcfdff;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.project-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.project-fund {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.project-meta {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.project-desc {
+  font-size: 14px;
+  line-height: 1.35;
+}
+
 @media (max-width: 1080px) {
   .page {
     grid-template-columns: 1fr;
@@ -263,6 +308,12 @@ a:hover {
   .pub-gif {
     width: 100%;
     max-width: 260px;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
   }
 }
 </style>
@@ -343,7 +394,6 @@ a:hover {
             <div class="pub-title">[3] Design and Implementation of a Novel Two-Wheeled Composite Self-Balancing Robot for Stationary Operations in Unknown Terrain</div>
             <div class="pub-meta">J.-X. Chen, N. He, Z. Xu, M. Dou, and L. He. IEEE Access, vol. 13, pp. 86032–86045, 2025, doi: 10.1109/ACCESS.2025.3569325</div>
           </div>
-          <img src="assets/images/paper3.gif" class="pub-gif" alt="Paper 3 demo">
         </li>
 
         <li>
@@ -351,21 +401,33 @@ a:hover {
             <div class="pub-title">[4] Gait Planning for 4-Steward Structure Based Caterpillar-Like Robot: A Segmental Progressive Generation Approach</div>
             <div class="pub-meta">F. Yue et al., M. Dou*. 2025 37th Chinese Control and Decision Conference (CCDC), doi: 10.1109/CCDC65474.2025.11090813</div>
           </div>
-          <img src="assets/images/paper4.gif" class="pub-gif" alt="Paper 4 demo">
         </li>
       </ul>
     </section>
 
     <section class="section" id="projects">
       <h3>Projects</h3>
-      <div class="research-grid">
-        <div class="research-item">
-          <strong>Project 1</strong>
-          Brief description of project scope and outcomes.
+      <div class="project-list">
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-title">Optimal Mechanical Structure Design and Control Algorithm Research for a Bio-Inspired Caterpillar Robot</div>
+            <div class="project-fund">300,000 RMB</div>
+          </div>
+          <div class="project-meta">Duration: Jun. 2021 – Jun. 2022</div>
+          <div class="project-desc">
+            Development of gait planning algorithms; development of control algorithms; circuit design and system debugging.
+          </div>
         </div>
-        <div class="research-item">
-          <strong>Project 2</strong>
-          Brief description of project scope and outcomes.
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-title">Development of an Intelligent UAV Release System Based on Binocular Vision Sensors</div>
+            <div class="project-fund">400,000 RMB</div>
+          </div>
+          <div class="project-meta">Duration: Sep. 2022 – Feb. 2025</div>
+          <div class="project-desc">
+            Development of visual recognition algorithms; development of visual calibration and positioning algorithms; hardware system design and setup; software architecture development.
+          </div>
         </div>
       </div>
     </section>
