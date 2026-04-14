@@ -1,109 +1,433 @@
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dou Mingyuan | Academic Homepage</title>
+  <title>Dou Mingyuan | Academic Profile</title>
   <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #1d4ed8;
+      --accent-soft: #dbeafe;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --maxw: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: Arial, "Microsoft YaHei", sans-serif;
-      background: #f5f7fb;
-      color: #222;
-      line-height: 1.8;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
     }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 28px;
-      margin-bottom: 24px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-    }
-    h1, h2 {
-      margin-top: 0;
-    }
-    .meta {
-      color: #666;
-      margin-bottom: 16px;
-    }
+
     a {
-      color: #0b57d0;
+      color: var(--accent);
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
+
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 32px 20px 60px;
     }
+
+    .hero {
+      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .profile-photo {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: #eef2ff;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      line-height: 1.2;
+    }
+
+    h1 { font-size: 2.2rem; }
+    h2 {
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+    }
+    h3 { font-size: 1.1rem; }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin-top: 16px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #1e3a8a;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 26px;
+      margin-top: 24px;
+    }
+
+    .muted { color: var(--muted); }
+
     ul {
+      margin: 10px 0 0;
       padding-left: 20px;
     }
-    .links a {
-      margin-right: 16px;
+
+    li { margin: 6px 0; }
+
+    .paper-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      margin-top: 22px;
+    }
+
+    .paper-gif {
+      width: 100%;
+      display: block;
+      background: #eef2ff;
+      border-bottom: 1px solid var(--line);
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .paper-body {
+      padding: 22px;
+    }
+
+    .paper-meta {
+      color: var(--muted);
+      font-size: 0.96rem;
+      margin-bottom: 12px;
+    }
+
+    .paper-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .paper-links a {
+      font-weight: 600;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .small-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      background: #fff;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 28px;
+    }
+
+    code.block {
+      display: block;
+      white-space: pre-wrap;
+      background: #111827;
+      color: #f9fafb;
+      border-radius: 16px;
+      padding: 18px;
+      font-size: 0.92rem;
+      overflow-x: auto;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-photo {
+        width: 180px;
+        height: 180px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-
-    <div class="card">
-      <h1>Dou Mingyuan</h1>
-      <div class="meta">Academic Homepage</div>
-      <p>
-        Welcome to my personal academic website. My research interests include robotics,
-        compliant actuation, mechanism design, motion control, and optimization.
-      </p>
-      <div class="links">
-        <a href="mailto:your@email.com">Email</a>
-        <a href="https://github.com/MingyuanDou" target="_blank">GitHub</a>
-        <a href="#" target="_blank">Google Scholar</a>
-        <a href="./cv.pdf" target="_blank">CV</a>
+    <section class="hero">
+      <img class="profile-photo" src="./assets/profile/profile_photo.jpg" alt="Dou Mingyuan profile photo" />
+      <div>
+        <h1>Dou Mingyuan</h1>
+        <div class="subtitle">
+          Ph.D. Candidate in Robotics / Mechanical Engineering<br />
+          Xi'an University of Architecture and Technology
+        </div>
+        <p>
+          I work on <strong>robot mechanism design, elastic actuation, control, and experimental validation</strong>,
+          with a particular interest in <strong>legged robots, bio-inspired robots, and high-performance robotic systems under limited resources</strong>.
+        </p>
+        <div class="links">
+          <a class="chip" href="mailto:YOUR_EMAIL_HERE">Email</a>
+          <a class="chip" href="YOUR_GOOGLE_SCHOLAR_LINK" target="_blank">Google Scholar</a>
+          <a class="chip" href="YOUR_ORCID_LINK" target="_blank">ORCID</a>
+          <a class="chip" href="YOUR_HOMEPAGE_LINK" target="_blank">Homepage</a>
+        </div>
       </div>
+    </section>
+
+    <div class="grid">
+      <section class="section">
+        <h2>Research Interests</h2>
+        <ul>
+          <li>Legged robot mechanism and actuation design</li>
+          <li>Parallel elastic actuation and explosive motion</li>
+          <li>Bio-inspired robotic locomotion</li>
+          <li>Robot control and mechanism-control co-design</li>
+          <li>Low-cost robotic prototyping and experimental systems</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Academic Highlights</h2>
+        <ul>
+          <li>First-author publication in <strong>IEEE Robotics and Automation Letters (RA-L)</strong></li>
+          <li>First-author publication in <strong>Biomimetics</strong></li>
+          <li>Strong experience in building robotic systems with limited resources</li>
+          <li>Research combining mechanism innovation, control, and real-system validation</li>
+        </ul>
+      </section>
     </div>
 
-    <div class="card">
-      <h2>About Me</h2>
-      <p>
-        在这里写你的身份介绍，例如：某某大学博士生，研究方向为腿足机器人、
-        弹性驱动机构、仿生关节设计与运动控制。
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Research Interests</h2>
-      <ul>
-        <li>Legged robots</li>
-        <li>Elastic actuators and mechanism design</li>
-        <li>Biomechanics-inspired robotics</li>
-        <li>Optimization and experimental validation</li>
-      </ul>
-    </div>
-
-    <div class="card">
+    <section class="section">
       <h2>Selected Publications</h2>
+      <p class="muted">Replace each GIF path and link placeholder with your own files and URLs.</p>
+
+      <article class="paper-card">
+        <img class="paper-gif" src="./assets/papers/ral_ankle_actuator.gif" alt="RA-L paper GIF" />
+        <div class="paper-body">
+          <h3>Parallel Elastic Ankle Actuator With a Unidirectional Clutch for Explosive Motion in Legged Robots</h3>
+          <div class="paper-meta"><strong>Dou Mingyuan</strong>, [Co-authors here] · <em>IEEE Robotics and Automation Letters (RA-L), 2026</em></div>
+          <p>
+            This work proposes a parallel elastic ankle actuator with a unidirectional clutch to decouple
+            high-torque energy storage from fast joint release, improving explosive locomotion performance in legged robots.
+          </p>
+          <ul>
+            <li>Decoupled elastic actuation via a unidirectional clutch</li>
+            <li>Improved energy efficiency for explosive robotic motion</li>
+            <li>Hardware prototype with experimental validation</li>
+          </ul>
+          <div class="paper-links">
+            <a href="YOUR_RAL_PAPER_LINK" target="_blank">Paper</a>
+            <a href="YOUR_RAL_DOI_LINK" target="_blank">DOI</a>
+            <a href="YOUR_RAL_VIDEO_LINK" target="_blank">Video</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper-card">
+        <img class="paper-gif" src="./assets/papers/biomimetics_segmented_robot.gif" alt="Biomimetics paper GIF" />
+        <div class="paper-body">
+          <h3>Caterpillar-Inspired Multi-Gait Generation Method for a Series-Parallel Hybrid Segmented Robot</h3>
+          <div class="paper-meta"><strong>Dou Mingyuan</strong>, [Co-authors here] · <em>Biomimetics, 2024</em></div>
+          <p>
+            This work presents a caterpillar-inspired segmented robot together with a multi-gait generation framework
+            for adaptive locomotion in complex environments.
+          </p>
+          <ul>
+            <li>Bio-inspired segmented robot platform</li>
+            <li>Multi-gait generation and locomotion analysis</li>
+            <li>Experimental validation on complex terrain</li>
+          </ul>
+          <div class="paper-links">
+            <a href="YOUR_BIOMIMETICS_PAPER_LINK" target="_blank">Paper</a>
+            <a href="YOUR_BIOMIMETICS_DOI_LINK" target="_blank">DOI</a>
+            <a href="YOUR_BIOMIMETICS_VIDEO_LINK" target="_blank">Video</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper-card">
+        <img class="paper-gif" src="./assets/papers/access_self_balancing_robot.gif" alt="IEEE Access paper GIF" />
+        <div class="paper-body">
+          <h3>Design and Implementation of a Novel Two-Wheeled Composite Self-Balancing Robot for Stationary Operations in Unknown Terrain</h3>
+          <div class="paper-meta">[Author list here, highlight your role if needed] · <em>IEEE Access, 2025</em></div>
+          <p>
+            This work develops a two-wheeled composite self-balancing robot for stable stationary operations under uncertain terrain conditions,
+            integrating mechanism design, balancing control, and extensive real-world evaluation.
+          </p>
+          <ul>
+            <li>Composite self-balancing robot platform</li>
+            <li>Robust performance on unknown terrain</li>
+            <li>Extensive physical experiments</li>
+          </ul>
+          <div class="paper-links">
+            <a href="YOUR_ACCESS_PAPER_LINK" target="_blank">Paper</a>
+            <a href="YOUR_ACCESS_DOI_LINK" target="_blank">DOI</a>
+            <a href="YOUR_ACCESS_VIDEO_LINK" target="_blank">Video</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper-card">
+        <img class="paper-gif" src="./assets/papers/paper_04_demo.gif" alt="Additional paper GIF" />
+        <div class="paper-body">
+          <h3>Additional Paper / Future Publication</h3>
+          <div class="paper-meta">[Author list here] · <em>Journal / Conference, Year</em></div>
+          <p>Add a short summary here for your next paper, submission, or ongoing work.</p>
+          <ul>
+            <li>Highlight 1</li>
+            <li>Highlight 2</li>
+            <li>Highlight 3</li>
+          </ul>
+          <div class="paper-links">
+            <a href="YOUR_PAPER4_LINK" target="_blank">Paper</a>
+            <a href="YOUR_PAPER4_DOI_LINK" target="_blank">DOI</a>
+            <a href="YOUR_PAPER4_VIDEO_LINK" target="_blank">Video</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>Representative Projects</h2>
+      <div class="two-col">
+        <div class="small-card">
+          <h3>Low-Cost Yet High-Impact Robotics Research</h3>
+          <p>
+            Built robotic platforms and experimental systems under limited resources,
+            with a focus on turning practical engineering work into publishable academic outputs.
+          </p>
+        </div>
+        <div class="small-card">
+          <h3>Mechanism and Experimental Platform Development</h3>
+          <p>
+            Conducted CAD design, prototyping, control implementation, hardware integration,
+            and full-system debugging for robotic prototypes.
+          </p>
+        </div>
+        <div class="small-card">
+          <h3>Mechanism-Control Integrated Research</h3>
+          <p>
+            Combined structural innovation with control design,
+            emphasizing physically validated robotic performance instead of simulation-only results.
+          </p>
+        </div>
+        <div class="small-card">
+          <h3>Experimental Robotics</h3>
+          <p>
+            Focused on system-level design and testing for bio-inspired and legged robotic platforms,
+            including actuation, sensing, and dynamic experiments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Technical Skills</h2>
+      <div class="two-col">
+        <div class="small-card">
+          <h3>Mechanical Design</h3>
+          <p>SolidWorks, CAD modeling, 3D printing, prototype assembly</p>
+        </div>
+        <div class="small-card">
+          <h3>Control & Robotics</h3>
+          <p>Robot dynamics, locomotion control, balancing control, actuation design, experimental robotics</p>
+        </div>
+        <div class="small-card">
+          <h3>Programming</h3>
+          <p>MATLAB, Python, C/C++, Arduino, embedded programming</p>
+        </div>
+        <div class="small-card">
+          <h3>Hardware & Systems</h3>
+          <p>Sensor integration, motor drive systems, robot prototyping, system debugging, test bench development</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Repository Structure</h2>
+      <code class="block">your-repo/
+├── index.html
+└── assets/
+    ├── profile/
+    │   └── profile_photo.jpg
+    └── papers/
+        ├── ral_ankle_actuator.gif
+        ├── biomimetics_segmented_robot.gif
+        ├── access_self_balancing_robot.gif
+        └── paper_04_demo.gif</code>
+    </section>
+
+    <section class="section">
+      <h2>Placeholders to Replace</h2>
       <ul>
-        <li>Paper Title 1, Journal/Conference, 2026 [<a href="#">PDF</a>]</li>
-        <li>Paper Title 2, Journal/Conference, 2025 [<a href="#">PDF</a>]</li>
+        <li>YOUR_EMAIL_HERE</li>
+        <li>YOUR_GOOGLE_SCHOLAR_LINK</li>
+        <li>YOUR_ORCID_LINK</li>
+        <li>YOUR_HOMEPAGE_LINK</li>
+        <li>YOUR_RAL_PAPER_LINK / DOI / VIDEO</li>
+        <li>YOUR_BIOMIMETICS_PAPER_LINK / DOI / VIDEO</li>
+        <li>YOUR_ACCESS_PAPER_LINK / DOI / VIDEO</li>
+        <li>Author lists and final journal metadata</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="card">
-      <h2>Projects</h2>
-      <ul>
-        <li>Project 1: 简要说明项目内容。</li>
-        <li>Project 2: 简要说明项目内容。</li>
-      </ul>
+    <div class="footer">
+      © 2026 Dou Mingyuan · Academic Profile Template
     </div>
-
-    <div class="card">
-      <h2>Contact</h2>
-      <p>Email: your@email.com</p>
-      <p>GitHub: <a href="https://github.com/MingyuanDou" target="_blank">github.com/MingyuanDou</a></p>
-    </div>
-
   </div>
 </body>
 </html>
